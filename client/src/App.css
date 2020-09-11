@@ -1,0 +1,11 @@
+:root {
+  --netflix-red: #e10813;
+}
+
+p {
+  font-size: 18px;
+}
+
+.app {
+  position: relative;
+}

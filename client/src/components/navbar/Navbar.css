@@ -1,0 +1,31 @@
+.navbar {
+  z-index: 1000;
+  height: 50px;
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.navbar img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.navbar .ui.button {
+  background-color: var(--netflix-red);
+  color: #fff;
+  font-size: 16px;
+}
+
+.navbar .ui.button:focus,
+.navbar .ui.button:hover,
+.navbar .ui.button:active {
+  color: #fff;
+  background-color: var(--netflix-red);
+}
