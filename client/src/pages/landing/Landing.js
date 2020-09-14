@@ -2,8 +2,10 @@ import React from 'react'
 import './Landing.css'
 import { Input, Button } from 'semantic-ui-react'
 import { useFormik } from 'formik'
+import { connect } from 'react-redux'
+import { getTempEmail } from '../../redux/actions/userActions'
 
-const Landing = () => {
+const Landing = ({ history, getTempEmail }) => {
   const formik = useFormik({
     initialValues: {
       email: ''
@@ -18,7 +20,8 @@ const Landing = () => {
       return errors
     },
     onSubmit: values => {
-      console.log(values.email)
+      getTempEmail(values.email)
+      history.push('/register')
     }
   })
 
@@ -57,4 +60,4 @@ const Landing = () => {
   )
 }
 
-export default Landing
+export default connect(null, { getTempEmail })(Landing)
