@@ -4,9 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "npm run server",
-    "dev": "nodemon run server",
-    "start": "npm start --prefix client"
+    "server": "node server",
+    "nodemon": "nodemon run server",
+    "start": "npm start --prefix client",
+    "dev": "concurrently \"npm run nodemon\" \"npm run start\""
   },
   "keywords": [],
   "author": "",
@@ -17,13 +18,15 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
-    "http-proxy-middleware": "^1.0.5",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.4",
     "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
+    "http-proxy-middleware": "^1.0.5",
     "nodemon": "^2.0.4"
   }
 }

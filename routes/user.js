@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const config = require('config')
 const secretToken = config.get('SECRET_TOKEN')
+const auth = require('../middlewares/auth')
 
 // Register user
 // POST /api/users
@@ -71,6 +72,21 @@ router.post('/login', [body('email').isEmail(), body('password').isLength({ min:
     return res.json({ token })
   } catch (err) {
     return res.status(500).send('Erreur serveur')
+  }
+})
+
+// Load user
+// GET /api/users
+// Private
+router.get('/', auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id)
+    if (!user) {
+      return res.status(404).send('Utilisateur introuvable')
+    }
+    return res.json(user)
+  } catch (err) {
+    console.log(err.message)
   }
 })
 
