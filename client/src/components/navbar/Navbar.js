@@ -7,7 +7,7 @@ import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logoutUser } from '../../redux/actions/userActions'
 
-const Navbar = ({ location, user: { isAuthenticated, loading }, logoutUser }) => {
+const Navbar = ({ location, user: { isAuthenticated, loading }, logoutUser, history }) => {
   const [option2, setOption2] = useState(false)
   useEffect(() => {
     if (location.pathname === '/register') {
@@ -24,7 +24,7 @@ const Navbar = ({ location, user: { isAuthenticated, loading }, logoutUser }) =>
           <img src={netflixLogo} alt='Netflix Logo' />
         </Link>
         {!loading && isAuthenticated ? (
-          <Button as={Link} to='/' onClick={logoutUser}>
+          <Button as={Link} to='/' onClick={() => logoutUser(history)}>
             Se Déconnecter
           </Button>
         ) : (

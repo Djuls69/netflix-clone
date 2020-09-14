@@ -1,0 +1,37 @@
+.custom-button {
+  margin-right: 20px;
+  width: 175px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: #141414;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  color: #fff;
+  background-color: var(--netflix-red);
+}
+
+.custom-button__secondary {
+  margin-right: 20px;
+  width: 175px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: #666;
+  background-color: transparent;
+  border: 1px solid #666;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.custom-button__secondary:hover {
+  color: #fff;
+  border: 1px solid #fff;
+}

@@ -4,8 +4,9 @@ import { Input, Button } from 'semantic-ui-react'
 import { useFormik } from 'formik'
 import { connect } from 'react-redux'
 import { getTempEmail } from '../../redux/actions/userActions'
+import { Redirect } from 'react-router-dom'
 
-const Landing = ({ history, getTempEmail }) => {
+const Landing = ({ history, getTempEmail, user: { user } }) => {
   const formik = useFormik({
     initialValues: {
       email: ''
@@ -24,8 +25,11 @@ const Landing = ({ history, getTempEmail }) => {
       history.push('/register')
     }
   })
-
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } = formik
+
+  if (user !== null) {
+    return <Redirect to='/profiles' />
+  }
 
   return (
     <div className='landing'>
@@ -60,4 +64,8 @@ const Landing = ({ history, getTempEmail }) => {
   )
 }
 
-export default connect(null, { getTempEmail })(Landing)
+const mapState = state => ({
+  user: state.user
+})
+
+export default connect(mapState, { getTempEmail })(Landing)

@@ -9,3 +9,11 @@ p {
 .app {
   position: relative;
 }
+
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}

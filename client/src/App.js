@@ -9,6 +9,8 @@ import Navbar from './components/navbar/Navbar'
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import Profiles from './pages/profiles/Profiles'
+import PrivateRoute from './utils/PrivateRoute'
+import AddProfile from './pages/addProfile/AddProfile'
 
 const App = ({ loadUser }) => {
   useEffect(() => {
@@ -23,7 +25,8 @@ const App = ({ loadUser }) => {
           <Route exact path='/' component={Landing} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
-          <Route exact path='/profiles' component={Profiles} />
+          <PrivateRoute exact path='/profiles' component={Profiles} />
+          <PrivateRoute exact path='/add-profile' component={AddProfile} />
         </Switch>
       </Router>
     </div>

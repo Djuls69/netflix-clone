@@ -29,7 +29,7 @@ export const registerUser = formData => async dispatch => {
   }
 }
 
-export const loginUser = formData => async dispatch => {
+export const loginUser = (formData, history) => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json'
@@ -41,6 +41,8 @@ export const loginUser = formData => async dispatch => {
       type: REGISTER_USER,
       payload: res.data
     })
+    dispatch(loadUser())
+    history.push('/')
   } catch (err) {
     console.log(err.response.data)
     dispatch({
@@ -70,6 +72,9 @@ export const loadUser = () => async dispatch => {
   }
 }
 
-export const logoutUser = () => ({
-  type: LOGOUT_USER
-})
+export const logoutUser = history => dispatch => {
+  dispatch({
+    type: LOGOUT_USER
+  })
+  history.push('/')
+}
