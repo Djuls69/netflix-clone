@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions/userActions'
 
-const Login = ({ loginUser }) => {
+const Login = ({ loginUser, history }) => {
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -30,7 +30,7 @@ const Login = ({ loginUser }) => {
       return errors
     },
     onSubmit: values => {
-      loginUser({ email: values.email, password: values.password })
+      loginUser({ email: values.email, password: values.password }, history)
     }
   })
 

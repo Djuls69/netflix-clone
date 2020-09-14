@@ -21,7 +21,6 @@ export const registerUser = formData => async dispatch => {
       payload: res.data
     })
     dispatch(loadUser())
-    alert('Register successfull')
   } catch (err) {
     console.log(err.response.data)
     dispatch({
@@ -42,8 +41,6 @@ export const loginUser = formData => async dispatch => {
       type: REGISTER_USER,
       payload: res.data
     })
-    dispatch(loadUser())
-    alert('Register successfull')
   } catch (err) {
     console.log(err.response.data)
     dispatch({
@@ -56,7 +53,7 @@ export const loadUser = () => async dispatch => {
   if (localStorage.netflixToken) {
     axios.defaults.headers.common['Authorization'] = localStorage.netflixToken
   } else {
-    delete axios.defaults.headers.common
+    delete axios.defaults.headers.common['Authorization']
   }
 
   try {

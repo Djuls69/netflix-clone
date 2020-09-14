@@ -8,12 +8,11 @@ import Landing from './pages/landing/Landing'
 import Navbar from './components/navbar/Navbar'
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
+import Profiles from './pages/profiles/Profiles'
 
 const App = ({ loadUser }) => {
   useEffect(() => {
-    if (localStorage.netflixToken) {
-      loadUser()
-    }
+    loadUser()
   }, [loadUser])
 
   return (
@@ -24,6 +23,7 @@ const App = ({ loadUser }) => {
           <Route exact path='/' component={Landing} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
+          <Route exact path='/profiles' component={Profiles} />
         </Switch>
       </Router>
     </div>

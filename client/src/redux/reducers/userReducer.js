@@ -4,6 +4,7 @@ const INIT_STATE = {
   token: localStorage.getItem('netflixToken'),
   tempEmail: null,
   isAuthenticated: false,
+  user: null,
   loading: true
 }
 
@@ -22,12 +23,13 @@ const userReducer = (state = INIT_STATE, action) => {
       return {
         ...state,
         token: localStorage.getItem('netflixToken'),
-        loading: true
+        loading: false
       }
     case LOAD_USER:
       return {
         ...state,
         isAuthenticated: true,
+        user: payload,
         loading: false
       }
     case LOGOUT_USER:

@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { registerUser } from '../../redux/actions/userActions'
 import { Redirect } from 'react-router-dom'
 
-const Register = ({ user: { tempEmail }, registerUser }) => {
+const Register = ({ user: { tempEmail }, registerUser, history }) => {
   const formik = useFormik({
     initialValues: {
       password: ''
@@ -23,7 +23,7 @@ const Register = ({ user: { tempEmail }, registerUser }) => {
       return errors
     },
     onSubmit: values => {
-      registerUser({ email: tempEmail, password: values.password })
+      registerUser({ email: tempEmail, password: values.password }, history)
     }
   })
 
