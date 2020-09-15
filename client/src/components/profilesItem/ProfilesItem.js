@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ProfilesItem = ({ name, avatar }) => {
+const ProfilesItem = ({ name, avatar, ...otherProps }) => {
   return (
-    <div className='profiles__block'>
+    <div {...otherProps} className='profiles__block'>
       <div className='profiles__avatar'>
         <img src={avatar} alt={`${name}'s avatar`} />
       </div>

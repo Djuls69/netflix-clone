@@ -90,4 +90,40 @@ router.get('/', auth, async (req, res) => {
   }
 })
 
+// Add user profile
+// POST /api/users/profile
+// Private
+router.post('/profile', [auth, [body('name').not().isEmpty()]], async (req, res) => {
+  const errors = validationResult(req)
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() })
+  }
+
+  try {
+    const user = await User.findById(req.user.id)
+    if (!user) {
+      return res.status(404).send('Utilisateur introuvable')
+    }
+
+    if (user.profiles.length > 2) {
+      return res.status(403).send('2 profils maximum')
+    }
+
+    const newProfile = { name: req.body.name, avatar: '' }
+    if (user.profiles.length === 0) {
+      newProfile.avatar =
+        'https://occ-0-56-55.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABSLII-o6GmYPFo09Nlv7D5jVLJGKsBJnZFzFAj82yk-WfGl7mV_vbCPIK5h65iTgGTs1dobHjU5Nlwc0EwKaty5KYhoV.png'
+    } else if (user.profiles.length > 0) {
+      newProfile.avatar =
+        'https://occ-0-56-55.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABYCq-HPaBmwWzyEo8UjC3jQ7a2mKJhU4uPbQwFrauKbu9_-6GpfPccnQh3UWZvsGLQ1MwLo_4YZ-kuTiAsqpq0oEdPXS.png'
+    }
+
+    user.profiles.push(newProfile)
+    await user.save()
+    return res.json(user)
+  } catch (err) {
+    console.log(err.message)
+  }
+})
+
 module.exports = router

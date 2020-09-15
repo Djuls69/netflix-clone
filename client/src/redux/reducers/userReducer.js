@@ -1,10 +1,11 @@
-import { TEMP_EMAIL, REGISTER_USER, LOAD_USER, USER_ERROR, LOGOUT_USER } from '../types'
+import { TEMP_EMAIL, REGISTER_USER, LOAD_USER, USER_ERROR, LOGOUT_USER, ADD_PROFILE, SELECT_PROFILE } from '../types'
 
 const INIT_STATE = {
   token: localStorage.getItem('netflixToken'),
   tempEmail: null,
   isAuthenticated: false,
   user: null,
+  selectedProfile: null,
   loading: true
 }
 
@@ -26,6 +27,7 @@ const userReducer = (state = INIT_STATE, action) => {
         loading: false
       }
     case LOAD_USER:
+    case ADD_PROFILE:
       return {
         ...state,
         isAuthenticated: true,
@@ -40,6 +42,12 @@ const userReducer = (state = INIT_STATE, action) => {
         token: null,
         isAuthenticated: false,
         user: null,
+        loading: false
+      }
+    case SELECT_PROFILE:
+      return {
+        ...state,
+        selectedProfile: payload,
         loading: false
       }
     default:

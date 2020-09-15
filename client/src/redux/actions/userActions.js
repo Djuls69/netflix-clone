@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { REGISTER_USER, TEMP_EMAIL, LOAD_USER, USER_ERROR, LOGOUT_USER } from '../types'
+import { REGISTER_USER, TEMP_EMAIL, LOAD_USER, USER_ERROR, LOGOUT_USER, ADD_PROFILE, SELECT_PROFILE } from '../types'
 
 export const getTempEmail = payload => {
   return {
@@ -77,4 +77,26 @@ export const logoutUser = history => dispatch => {
     type: LOGOUT_USER
   })
   history.push('/')
+}
+
+export const addProfile = formData => async dispatch => {
+  try {
+    const res = await axios.post('/api/users/profile', formData, { headers: { 'Config-Type': 'application/json' } })
+    dispatch({
+      type: ADD_PROFILE,
+      payload: res.data
+    })
+  } catch (err) {
+    console.log(err.response.data)
+    dispatch({
+      type: USER_ERROR
+    })
+  }
+}
+
+export const selectProfile = profile => dispatch => {
+  dispatch({
+    type: SELECT_PROFILE,
+    payload: profile
+  })
 }
