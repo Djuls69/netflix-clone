@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import './Profiles.css'
 import ProfilesItem from '../../components/profilesItem/ProfilesItem'
@@ -6,8 +6,23 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectProfile } from '../../redux/actions/userActions'
 import Navbar from '../../components/navbar/Navbar'
+import axios from 'axios'
 
 const Profiles = ({ user: { loading, user }, history, selectProfile }) => {
+  useEffect(() => {
+    const testFetch = async () => {
+      try {
+        const res = await axios.get(
+          'https://api.themoviedb.org/3/trending/all/week?api_key=0bde9bd901964f55023e7ae1b2d901bd'
+        )
+        console.log(res.data.results)
+      } catch (err) {
+        console.log(err.message)
+      }
+    }
+    testFetch()
+  }, [])
+
   if (!loading && !user) {
     return <Redirect to='/login' />
   }

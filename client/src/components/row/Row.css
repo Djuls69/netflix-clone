@@ -1,0 +1,46 @@
+.movies-row {
+  color: #e5e5e5;
+  padding: 10px 80px;
+  padding-bottom: 20px;
+}
+
+.movies-row h1 {
+  font-size: 1.4vw;
+}
+
+.movies-row__container {
+  display: flex;
+  overflow-x: scroll;
+  width: 100vw;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.movies-row__container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.movies-row__container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.slider {
+  width: 100%;
+}
+
+.slick-slide {
+  width: 14vw !important;
+}
+
+.movies-row__poster {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.45s ease-out;
+}
+
+.movies-row__poster:hover {
+  transform: scale(1.2);
+}

@@ -10,6 +10,7 @@ import Register from './pages/register/Register'
 import Profiles from './pages/profiles/Profiles'
 import PrivateRoute from './utils/PrivateRoute'
 import AddProfile from './pages/addProfile/AddProfile'
+import Movies from './pages/movies/Movies'
 
 const App = ({ loadUser }) => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const App = ({ loadUser }) => {
           <Route exact path='/register' component={Register} />
           <PrivateRoute exact path='/profiles' component={Profiles} />
           <PrivateRoute exact path='/add-profile' component={AddProfile} />
+          <PrivateRoute exact path='/movies' component={Movies} />
         </Switch>
       </Router>
     </div>
