@@ -4,6 +4,7 @@ import './AddProfile.css'
 import CustomButton from '../../components/customButton/CustomButton'
 import { connect } from 'react-redux'
 import { addProfile } from '../../redux/actions/userActions'
+import Navbar from '../../components/navbar/Navbar'
 
 const AddProfile = ({ history, addProfile, user: { user } }) => {
   const [name, setName] = useState('')
@@ -16,6 +17,7 @@ const AddProfile = ({ history, addProfile, user: { user } }) => {
 
   return (
     <div className='add-profile'>
+      <Navbar />
       <div className='add-profile__container'>
         <form noValidate onSubmit={handleSubmit}>
           <h1>Ajouter un profil</h1>

@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { loadUser } from './redux/actions/userActions'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Landing from './pages/landing/Landing'
-import Navbar from './components/navbar/Navbar'
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import Profiles from './pages/profiles/Profiles'
@@ -20,7 +19,6 @@ const App = ({ loadUser }) => {
   return (
     <div className='app'>
       <Router>
-        <Navbar />
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route exact path='/login' component={Login} />

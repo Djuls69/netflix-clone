@@ -6,6 +6,7 @@ import { useFormik } from 'formik'
 import { connect } from 'react-redux'
 import { registerUser } from '../../redux/actions/userActions'
 import { Redirect } from 'react-router-dom'
+import Navbar2 from '../../components/navbar2/Navbar2'
 
 const Register = ({ user: { tempEmail }, registerUser, history }) => {
   const formik = useFormik({
@@ -35,6 +36,7 @@ const Register = ({ user: { tempEmail }, registerUser, history }) => {
 
   return (
     <div className='register'>
+      <Navbar2 />
       <div className='register__content'>
         <h1>S'identifier</h1>
         <form className='register__form' onSubmit={handleSubmit}>

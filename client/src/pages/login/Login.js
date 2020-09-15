@@ -6,6 +6,7 @@ import { useFormik } from 'formik'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions/userActions'
+import Navbar from '../../components/navbar/Navbar'
 
 const Login = ({ loginUser, history }) => {
   const formik = useFormik({
@@ -38,6 +39,7 @@ const Login = ({ loginUser, history }) => {
 
   return (
     <div className='login'>
+      <Navbar />
       <div className='login__content'>
         <h1>S'identifier</h1>
         <form className='login__form' onSubmit={handleSubmit}>

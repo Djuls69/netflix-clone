@@ -5,6 +5,7 @@ import { useFormik } from 'formik'
 import { connect } from 'react-redux'
 import { getTempEmail } from '../../redux/actions/userActions'
 import { Redirect } from 'react-router-dom'
+import Navbar from '../../components/navbar/Navbar'
 
 const Landing = ({ history, getTempEmail, user: { user } }) => {
   const formik = useFormik({
@@ -33,6 +34,7 @@ const Landing = ({ history, getTempEmail, user: { user } }) => {
 
   return (
     <div className='landing'>
+      <Navbar />
       <div className='landing__content'>
         <h1>
           Divertissement garanti.

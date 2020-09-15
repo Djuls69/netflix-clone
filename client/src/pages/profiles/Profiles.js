@@ -5,6 +5,7 @@ import ProfilesItem from '../../components/profilesItem/ProfilesItem'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectProfile } from '../../redux/actions/userActions'
+import Navbar from '../../components/navbar/Navbar'
 
 const Profiles = ({ user: { loading, user }, history, selectProfile }) => {
   if (!loading && !user) {
@@ -20,6 +21,7 @@ const Profiles = ({ user: { loading, user }, history, selectProfile }) => {
 
   return (
     <div className='profiles'>
+      <Navbar />
       <div className='profiles__container'>
         {user ? (
           <Fragment>
@@ -27,10 +29,10 @@ const Profiles = ({ user: { loading, user }, history, selectProfile }) => {
             <div className='profiles__blocks'>
               {!loading &&
                 user.profiles.length > 0 &&
-                user.profiles.map((profile, idx) => (
+                user.profiles.map(profile => (
                   <ProfilesItem
                     onClick={() => selectProfile(profile)}
-                    key={idx}
+                    key={profile._id}
                     avatar={profile.avatar}
                     name={profile.name}
                   />
