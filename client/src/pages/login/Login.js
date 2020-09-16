@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions/userActions'
 import Navbar from '../../components/navbar/Navbar'
 
-const Login = ({ loginUser, history }) => {
+const Login = ({ loginUser, history, error }) => {
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -64,7 +64,7 @@ const Login = ({ loginUser, history }) => {
           <Button type='submit' className='login__button'>
             S'identifier
           </Button>
-          <div className='login__errors'>{errors.password && touched.password && errors.password}</div>
+          <div className='login__errors'>{(errors.password && touched.password && errors.password) || error}</div>
         </form>
         <p className='login__text'>
           Première visite sur Netflix ?{' '}
@@ -84,8 +84,12 @@ const Login = ({ loginUser, history }) => {
   )
 }
 
+const mapState = state => ({
+  error: state.errors
+})
+
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired
 }
 
-export default connect(null, { loginUser })(Login)
+export default connect(mapState, { loginUser })(Login)

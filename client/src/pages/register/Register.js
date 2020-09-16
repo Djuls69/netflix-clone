@@ -24,7 +24,8 @@ const Register = ({ user: { tempEmail }, registerUser, history }) => {
       return errors
     },
     onSubmit: values => {
-      registerUser({ email: tempEmail, password: values.password }, history)
+      registerUser({ email: tempEmail, password: values.password })
+      history.push('/')
     }
   })
 

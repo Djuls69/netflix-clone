@@ -5,7 +5,7 @@ const INIT_STATE = {
   tempEmail: null,
   isAuthenticated: false,
   user: null,
-  selectedProfile: null,
+  selectedProfile: JSON.parse(localStorage.getItem('netflixProfile')),
   loading: true
 }
 
@@ -45,9 +45,10 @@ const userReducer = (state = INIT_STATE, action) => {
         loading: false
       }
     case SELECT_PROFILE:
+      localStorage.setItem('netflixProfile', JSON.stringify(payload))
       return {
         ...state,
-        selectedProfile: payload,
+        selectedProfile: JSON.parse(localStorage.getItem('netflixProfile')),
         loading: false
       }
     default:

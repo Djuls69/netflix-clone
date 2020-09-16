@@ -11,13 +11,13 @@ const Movies = props => {
 
       <Banner />
 
-      <Row title='Trending' url={urls.trending} />
-      <Row title='Top Rated' url={urls.topRated} />
-      <Row title='Originals' poster url={urls.originals} />
+      <Row title='Tendances actuelles' url={urls.trending} />
+      <Row title='Top 10 en France' url={urls.topRated} />
+      <Row title='Programmes originaux' poster url={urls.originals} />
       <Row title='Action' url={urls.action} />
-      <Row title='Comedy' url={urls.comedy} />
+      <Row title='Comédie' url={urls.comedy} />
       <Row title='Romance' url={urls.romance} />
-      <Row title='Horror' url={urls.horror} />
+      <Row title='Horreur' url={urls.horror} />
     </div>
   )
 }

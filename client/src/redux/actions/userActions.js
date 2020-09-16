@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { REGISTER_USER, TEMP_EMAIL, LOAD_USER, USER_ERROR, LOGOUT_USER, ADD_PROFILE, SELECT_PROFILE } from '../types'
+import { setError } from './errorsActions'
 
 export const getTempEmail = payload => {
   return {
@@ -44,7 +45,7 @@ export const loginUser = (formData, history) => async dispatch => {
     dispatch(loadUser())
     history.push('/')
   } catch (err) {
-    console.log(err.response.data)
+    dispatch(setError(err.response.data))
     dispatch({
       type: USER_ERROR
     })

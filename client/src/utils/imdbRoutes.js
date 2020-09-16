@@ -2,7 +2,7 @@ const key = process.env.REACT_APP_IMDB_KEY
 
 export const urls = {
   trending: `https://api.themoviedb.org/3/trending/all/week?api_key=${key}`,
-  originals: `https://api.themoviedb.org/3/discover/tv?api_key=${key}&with_networks=213`,
+  originals: `https://api.themoviedb.org/3/discover/tv?api_key=${key}&with_networks=213&language=fr`,
   topRated: `https://api.themoviedb.org/3/movie/top_rated?api_key=${key}&language=fr&total_results=40`,
   action: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=28`,
   comedy: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=35`,
