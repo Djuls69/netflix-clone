@@ -80,3 +80,30 @@
 .login p.login__small {
   font-size: 13px;
 }
+
+@media screen and (max-width: 600px) {
+  .login__content {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate(0, 0);
+    width: 95%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 80px 20px 20px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+  }
+
+  .login p {
+    color: #888;
+    font-size: 12px;
+  }
+
+  .login p.login__small {
+    font-size: 10px;
+  }
+}

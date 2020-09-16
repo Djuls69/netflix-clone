@@ -1,6 +1,6 @@
 .landing {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.8) 100%),
     url('https://assets.nflxext.com/ffe/siteui/vlv3/838a77eb-572a-4eb5-8e3a-364069b24d29/74108bce-ed59-4596-a5f6-a182f24fe062/FR-fr-20200907-popsignuptwoweeks-perspective_alpha_website_large.jpg')
@@ -17,7 +17,7 @@
 }
 
 .landing__content h1 {
-  font-size: 4rem;
+  font-size: 4vw;
 }
 
 .landing__form {
@@ -25,7 +25,7 @@
 }
 
 .landing__content h4 {
-  font-size: 2.5rem;
+  font-size: 2vw;
   font-weight: 400;
 }
 
@@ -47,7 +47,7 @@
   border-radius: 0 2px 2px 0;
   background-color: var(--netflix-red);
   color: #fff;
-  font-size: 25px;
+  font-size: 1.6vw;
   text-transform: uppercase;
   font-weight: 300;
 }
@@ -63,4 +63,84 @@
   text-align: left;
   color: orangered;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .landing__content {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate(0, 0);
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .landing {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .landing__content {
+    color: #fff;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate(0, 0);
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 80px;
+  }
+
+  .landing__content h1 {
+    font-size: 16px;
+  }
+
+  .landing__form {
+    margin-bottom: 30px;
+  }
+
+  .landing__content h4 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .landing__content p {
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .landing__input {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .landing__input .ui.input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .landing__input .ui.input input {
+    border-radius: 2px;
+  }
+
+  .landing__input .ui.button {
+    width: 80%;
+    border-radius: 2px;
+    background-color: var(--netflix-red);
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
 }

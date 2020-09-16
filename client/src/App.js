@@ -19,19 +19,17 @@ const App = ({ loadUser }) => {
   }, [loadUser])
 
   return (
-    <div className='app'>
-      <Router>
-        <Switch>
-          <Route exact path='/' component={Landing} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/register' component={Register} />
-          <PrivateRoute exact path='/profiles' component={Profiles} />
-          <PrivateRoute exact path='/add-profile' component={AddProfile} />
-          <PrivateRoute exact path='/movies' component={Movies} />
-        </Switch>
-        <Footer />
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/register' component={Register} />
+        <PrivateRoute exact path='/profiles' component={Profiles} />
+        <PrivateRoute exact path='/add-profile' component={AddProfile} />
+        <PrivateRoute exact path='/movies' component={Movies} />
+      </Switch>
+      <Footer />
+    </Router>
   )
 }
 

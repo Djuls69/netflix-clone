@@ -2,6 +2,8 @@
   color: #e5e5e5;
   padding: 10px 80px;
   padding-bottom: 20px;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .movies-row h1 {
@@ -43,4 +45,15 @@
 
 .movies-row__poster:hover {
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 600px) {
+  .movies-row {
+    color: #e5e5e5;
+    padding: 10px;
+  }
+
+  .movies-row h1 {
+    font-size: 20px;
+  }
 }

@@ -72,3 +72,80 @@
 .register p.register__small {
   font-size: 13px;
 }
+
+@media screen and (max-width: 600px) {
+  .register {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .register__content {
+    color: #111;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    width: 90%;
+    margin-top: 40px;
+  }
+
+  .register__content h1 {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+
+  .register__form {
+    margin-bottom: 30px;
+  }
+
+  .register__input {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .register__button.ui.button {
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--netflix-red);
+    color: #fff;
+    font-size: 18px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .register__button.ui.button:hover,
+  .register__button.ui.button:active,
+  .register__button.ui.button:focus {
+    background-color: var(--netflix-red);
+    color: #fff;
+  }
+
+  .register__errors {
+    text-align: left;
+    color: orangered;
+    margin-top: 20px;
+  }
+
+  .register__link {
+    color: #fff;
+  }
+
+  .register__link:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .register p {
+    color: #888;
+    font-size: 15px;
+  }
+
+  .register p.register__small {
+    font-size: 13px;
+  }
+}

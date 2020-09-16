@@ -44,7 +44,7 @@ const Navbar3 = ({ user: { user, selectedProfile }, selectProfile, logoutUser, h
           <img src={selectedProfile.avatar} alt='' />
         </div>
         {popup && (
-          <div onMouseLeave={() => setPopup(false)} className='navbar3__popup'>
+          <div onMouseLeave={() => setPopup(false)} onClick={() => setPopup(!popup)} className='navbar3__popup'>
             <ul>
               {user &&
                 user.profiles

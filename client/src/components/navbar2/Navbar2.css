@@ -36,3 +36,37 @@
   color: #fff;
   background-color: var(--netflix-red);
 }
+
+@media screen and (max-width: 600px) {
+  .navbar2 {
+    z-index: 1000;
+    height: 20px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: none;
+  }
+
+  .navbar2__logo {
+    height: 100%;
+    display: block;
+  }
+
+  .navbar2 img {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .navbar2 .ui.button {
+    background-color: var(--netflix-red);
+    color: #fff;
+    font-size: 10px;
+    margin: 0 !important;
+  }
+}
