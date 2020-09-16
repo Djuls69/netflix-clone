@@ -11,6 +11,7 @@ import Profiles from './pages/profiles/Profiles'
 import PrivateRoute from './utils/PrivateRoute'
 import AddProfile from './pages/addProfile/AddProfile'
 import Movies from './pages/movies/Movies'
+import Footer from './components/footer/Footer'
 
 const App = ({ loadUser }) => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const App = ({ loadUser }) => {
           <PrivateRoute exact path='/add-profile' component={AddProfile} />
           <PrivateRoute exact path='/movies' component={Movies} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   )

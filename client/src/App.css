@@ -12,6 +12,7 @@ p {
 
 .app {
   position: relative;
+  width: 100vw;
 }
 
 button:focus {
