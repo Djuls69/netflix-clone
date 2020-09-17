@@ -2,6 +2,7 @@ const express = require('express')
 const passport = require('passport')
 const cors = require('cors')
 const ConnectDB = require('./config/db')
+const path = require('path')
 
 // Connect to database
 ConnectDB()
