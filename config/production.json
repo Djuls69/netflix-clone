@@ -1,0 +1,8 @@
+{
+  "SECRET_TOKEN": "Uegy3fJY5pX8fFczZsgV",
+  "MONGO_URI": "mongodb+srv://admin:rZhyRZFAq9uqnRNd@netflix.g9dor.gcp.mongodb.net/collections?retryWrites=true&w=majority",
+  "GOOGLE_CLIENT_ID": "288691496525-16vdemmiud51mfvllft1ifvb5pjubnn7.apps.googleusercontent.com",
+  "GOOGLE_CLIENT_SECRET": "9WbzfXktd7lz4MQzn3KcFH84",
+  "FACEBOOK_CLIENT_ID": "749079549001996",
+  "FACEBOOK_CLIENT_SECRET": "5677f07d1e71d49fc46274dfdbf4d674"
+}
