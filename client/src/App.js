@@ -10,8 +10,8 @@ import Register from './pages/register/Register'
 import Login from './pages/login/Login'
 import Profiles from './pages/profiles/Profiles'
 import PrivateRoute from './utils/PrivateRoute'
-// import AddProfile from './pages/addProfile/AddProfile'
-// import Movies from './pages/movies/Movies'
+import AddProfile from './pages/addProfile/AddProfile'
+import Movies from './pages/movies/Movies'
 import Footer from './components/footer/Footer'
 
 if (localStorage.netflixToken) {
@@ -32,8 +32,8 @@ const App = ({ loadUser }) => {
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
         <PrivateRoute exact path='/profiles' component={Profiles} />
-        {/* <PrivateRoute exact path='/add-profile' component={AddProfile} />
-        <PrivateRoute exact path='/movies' component={Movies} /> */}
+        <PrivateRoute exact path='/add-profile' component={AddProfile} />
+        <PrivateRoute exact path='/movies' component={Movies} />
       </Switch>
       <Footer />
     </Router>
