@@ -6,8 +6,8 @@ import { connect } from 'react-redux'
 import { loadUser } from './redux/actions/userActions'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Landing from './pages/landing/Landing'
-import Login from './pages/login/Login'
 import Register from './pages/register/Register'
+import Login from './pages/login/Login'
 import Profiles from './pages/profiles/Profiles'
 import PrivateRoute from './utils/PrivateRoute'
 import AddProfile from './pages/addProfile/AddProfile'
@@ -28,6 +28,7 @@ const App = ({ loadUser }) => {
   return (
     <Router>
       <Switch>
+        {/* <Route exact path='/' component={() => <h1>Fucking heroku!</h1>} /> */}
         <Route exact path='/' component={Landing} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
@@ -40,7 +41,7 @@ const App = ({ loadUser }) => {
   )
 }
 
-Register.propTypes = {
+App.propTypes = {
   loadUser: PropTypes.func.isRequired
 }
 
