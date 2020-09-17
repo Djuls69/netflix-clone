@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "node server",
-    "nodemon": "nodemon run server",
+    "client-install": "npm install --prefix client",
+    "server": "node server.js",
+    "nodemon": "nodemon run server.js",
     "start": "npm start --prefix client",
     "dev": "concurrently \"npm run nodemon\" \"npm run start\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
