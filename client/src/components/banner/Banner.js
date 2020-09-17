@@ -3,7 +3,7 @@ import './Banner.css'
 import axios from 'axios'
 import Navbar3 from '../navbar3/Navbar3'
 
-const key = process.env.REACT_APP_IMDB_KEY
+const key = '0bde9bd901964f55023e7ae1b2d901bd'
 const imagePath = 'https://image.tmdb.org/t/p/original'
 
 const Banner = () => {

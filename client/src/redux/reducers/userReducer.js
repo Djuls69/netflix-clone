@@ -42,6 +42,7 @@ const userReducer = (state = INIT_STATE, action) => {
         token: null,
         isAuthenticated: false,
         user: null,
+        selectedProfile: null,
         loading: false
       }
     case SELECT_PROFILE:
