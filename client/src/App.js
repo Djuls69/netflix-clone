@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import './App.css'
+import axios from 'axios'
 import { connect } from 'react-redux'
 import { loadUser } from './redux/actions/userActions'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -12,6 +13,12 @@ import PrivateRoute from './utils/PrivateRoute'
 import AddProfile from './pages/addProfile/AddProfile'
 import Movies from './pages/movies/Movies'
 import Footer from './components/footer/Footer'
+
+if (localStorage.netflixToken) {
+  axios.defaults.headers.common['Authorization'] = localStorage.netflixToken
+} else {
+  delete axios.defaults.headers.common['Authorization']
+}
 
 const App = ({ loadUser }) => {
   useEffect(() => {
