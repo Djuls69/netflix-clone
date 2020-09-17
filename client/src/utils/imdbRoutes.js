@@ -1,4 +1,4 @@
-const key = process.env.REACT_APP_IMDB_KEY
+const key = '0bde9bd901964f55023e7ae1b2d901bd'
 
 export const urls = {
   trending: `https://api.themoviedb.org/3/trending/all/week?api_key=${key}`,
